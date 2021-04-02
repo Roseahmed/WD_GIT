@@ -1,0 +1,116 @@
+
+Different stages of git Version Control:-
+a)current working directory/space.
+b)stagging area.
+c)Local Repository(.git).
+d)Remote Repository(github).
+
+
+/*Process for creating git version Control
+
+git init; //for creating git to current working directory.
+git add filename; //for adding get into staging area.
+git status; //for checking the file is added to staging area or not.
+git commit -m "commit message better to give in peresent tense"; //for committing the file.
+git diff filename; //for checking the changes made in file.
+         OR 
+git show commit_id; //for checking chages made in the file.
+git log; //for displaying all commit.
+      OR
+git log --oneline; //for displaying commit in one line.
+*/
+
+
+
+/*Ignore files in Current Working for git version Control
+
+1.create hidden file like: touch .gitignore;
+2.open the file and write which file you want to ignore for version control like:
+*.cpp; //it will ignore all the cpp files.
+*.c;  //it will ignore all the c files.
+3.Add the file in staging area.
+4.Commit the file.
+*/
+
+
+/*Process for creating branch
+
+git branch; //for checking the total no of branches and to which branch it is pointing.
+git branch newBranchName; //for greating new branch.
+git checkout branchName_to_which_you_want_to_Work; //for switching to different branch.
+N.B:-New file creation or modificiation in branch will also reflect in master branch until it is added in staging area and committed.
+*/
+
+
+/*Process for merging different branches in master branch
+
+1.First go the branch to which you want merge with usally master branch like:- git checkout master;
+2.git merge branchName_to_which_you_want_to_merge_with_master.
+         
+         Merge Conflict
+when same file having different content in different branches if you do merge conflict occures.
+
+solution:Just open the file with vi editor and edit the content and then add and commit the file.
+*/
+
+
+/*Process for adding tag to commit
+
+git tag -a tagname -m "tagmessage" commit_id; //for adding tag name to commit.
+git tag; //For dispyaing tag.
+git tag -d tagname; //for removing the tag.
+N.B:- Tag is alternative for commit_id.
+*/
+
+
+/*Process for removing file from workspace,staging area and commit
+
+git restore fileName; //for removing file from working space.
+git restore --staged fileName; //for removing file from stagging area.
+git reset --mixed HEAD~1(no of last commit you want to remove); //remove the last one commit put it working space, --mixed is default reset.
+git reset --soft HEAD~2; //remove the last two commit and put it in staging area.
+git reset --hard HEAD~3; //remove the last three commit completely from all three stages.
+N.B:-Use reset for local repository only,and reset command is not recommended for public or remote repository(github).
+*/
+
+
+/*Process for reverting previous commit
+
+1.git revert commit_id; //for reverting previous commit
+2.It will automatically open nano editor.
+3.Just add the commitMessage and save the commit and exit.
+*/
+
+
+/*Process for deleting untracked files 
+
+git clean -n; //It will dispaly all the untracked file that should remove.
+git clean -f; //It will remove all the untracked file/directory.
+*/
+
+
+/*Process for moving any work to stash
+N.B:- For moving file in stash the file should be at least commited once.
+git stash; //for moving the modification file from working area to stash.
+git stash list; //for displaying list and list_id of stash file.
+git stash appy list_id; //for bringing back the data/file to working directory.
+git stash clear; //for clear the item copied in stash area.
+*/ 
+
+
+/*Process for pushing Local Repository to github
+
+git remote add origin/anyname link_of_github_Repository; 
+git branch -M main/master;
+git push -u origin main/master;
+*/
+
+/*Process for pulling code from remote Repository(github)
+
+git remote add origin Link_of_github_Repository.
+git pull origin master.
+*/
+
+/*Process for cloning github Repository to local directory
+git clone Link_Of_Repository.
+*/
